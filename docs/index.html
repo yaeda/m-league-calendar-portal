@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="M.LEAGUE Calendar / Mリーグカレンダー" />
+    <meta name="og:title" content="M.LEAGUE Calendar / Mリーグカレンダー" />
+    <!-- https://og-playground.vercel.app/?share=fVLBSsNAEP2VsCJeitZWi4QqSC0i6EnFSy9pskm3Jrsh2VhryaEpSA-ioIfiSS-KICh6qij-zGLFk36Cs6mtbaWedva9md33HlNDOjMwUlHWIHsFqig-r9p4sVaTtaKUMLFKXFWmZpPJyalEF6wQg5dGMIP4rq1VATVtvN9DZb1CPKxzwihwHqv0KM0mFl3j2PEB1zHl2OtR5cDnxKzmGIBUfj5MFzV91_JYQI0cs5kH_IRpmv0vYWqTHGBVSacGoJ0fI5lkMkbDsECXoMj6rkb7pgemU_OZMFz6umidfbZPsjOyLe6HmEYyGuP9j3md2YFD-7SjeRah69gEVXMLw-gWc6X-GAMV8TlWaWYOWjam1_PLq9t5JafZmBqa9yv5n9F0CkY7xzei3hKNumi8iMalqN-93b92mtciehLRg4jaonEVU7ciOn0_f_44epT9UVPUDweCmYFkoOidKIGYK537SK2heGWQOpuC-FF3qZCaScPFwMXAQqqp2T5OIOywMtmqunIjeSW-wUNScN4pYgOp3AtwGH4D -->
+    <meta property="og:image" content="./ogp.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>M.LEAGUE Calendar / Mリーグカレンダー</title>
+    <link
+      rel="icon alternate "
+      type="image/png"
+      href="https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.2/assets/72x72/1f5d3.png"
+    />
+    <style>
+      :root {
+        --color-mleague: #118737;
+        --color-mleague-dark: #085c23;
+        --color-mleague-light: #0fb142;
+        --color-drivens: #9cb832;
+        --color-drivens-dark: #1d6237;
+        --color-drivens-light: #dee54f;
+        --color-furinkazan: #000000;
+        --color-furinkazan-dark: #442a2d;
+        --color-furinkazan-light: #8e393c;
+        --color-sakuraknights: #f895b5;
+        --color-sakuraknights-dark: #cf2c62;
+        --color-sakuraknights-light: #feecf2;
+        --color-fightclub: #920101;
+        --color-fightclub-dark: #9e373e;
+        --color-fightclub-light: #de6d41;
+        --color-abemas: #c6ae6f;
+        --color-abemas-dark: #593c07;
+        --color-abemas-light: #f1edc4;
+        --color-phoenix: #b74801;
+        --color-phoenix-dark: #740200;
+        --color-phoenix-light: #bd6601;
+        --color-raiden: #dbb400;
+        --color-raiden-dark: #ba6c00;
+        --color-raiden-light: #cdc306;
+        --color-pirates: #0582c8;
+        --color-pirates-dark: #0a377b;
+        --color-pirates-light: #47bfd1;
+        --color-secondary: #888;
+        --space-section: 64px;
+      }
+      html,
+      body {
+        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+          "Hiragino Sans", Meiryo, sans-serif;
+        font-size: 18px;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a.link {
+        text-decoration: underline;
+      }
+      p {
+        margin: 8px 0;
+      }
+      section {
+        margin-top: var(--space-section);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      main {
+        width: 100%;
+        max-width: 800px;
+        padding: 0;
+        margin: auto;
+        text-align: center;
+      }
+      .lead {
+        font-size: 1rem;
+        margin: 0;
+        color: var(--color-secondary);
+      }
+      .team-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 32px 0 0 0;
+        list-style: none;
+      }
+      .team-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 300px;
+        margin: 8px;
+      }
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        padding: 4px;
+        border-radius: 100px;
+        overflow: hidden;
+      }
+      .button:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        aspect-ratio: 1 /1;
+        z-index: -1;
+        animation-name: rotation;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-play-state: paused;
+      }
+      .button:hover:before {
+        animation-play-state: running;
+      }
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .button > span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 8px;
+        border-radius: 100px;
+        color: #555555;
+        font-weight: 600;
+        background-color: white;
+        transition: none 0.2s ease-out 0s;
+        transition-property: background-color, color;
+      }
+      .button:hover > span {
+        background-color: transparent;
+        color: white;
+      }
+      .drivens {
+        color: var(--color-drivens);
+      }
+      .drivens .button:before {
+        background: linear-gradient(
+          135deg,
+          var(--color-drivens-dark),
+          var(--color-drivens-light)
+        );
+      }
+      .furinkazan {
+        color: var(--color-furinkazan);
+      }
+      .furinkazan .button:before {
+        background: linear-gradient(
+          135deg,
+          var(--color-furinkazan-dark),
+          var(--color-furinkazan-light)
+        );
+      }
+      .sakuraknights {
+        color: var(--color-sakuraknights);
+      }
+      .sakuraknights .button:before {
+        background: linear-gradient(
+          135deg,
+          var(--color-sakuraknights-dark),
+          var(--color-sakuraknights-light)
+        );
+      }
+      .fightclub {
+        color: var(--color-fightclub);
+      }
+      .fightclub .button:before {
+        background: linear-gradient(
+          135deg,
+          var(--color-fightclub-dark),
+          var(--color-fightclub-light)
+        );
+      }
+      .abemas {
+        color: var(--color-abemas);
+      }
+      .abemas .button:before {
+        background: linear-gradient(
+          135deg,
+          var(--color-abemas-dark),
+          var(--color-abemas-light)
+        );
+      }
+      .phoenix {
+        color: var(--color-phoenix);
+      }
+      .phoenix .button:before {
+        background: linear-gradient(
+          135deg,
+          var(--color-phoenix-dark),
+          var(--color-phoenix-light)
+        );
+      }
+      .raiden {
+        color: var(--color-raiden);
+      }
+      .raiden .button:before {
+        background: linear-gradient(
+          135deg,
+          var(--color-raiden-dark),
+          var(--color-raiden-light)
+        );
+      }
+      .pirates {
+        color: var(--color-pirates);
+      }
+      .pirates .button:before {
+        background: linear-gradient(
+          135deg,
+          var(--color-pirates-dark),
+          var(--color-pirates-light)
+        );
+      }
+      .all-team {
+        color: var(--color-mleague);
+      }
+      .all-team .button:before {
+        background: linear-gradient(
+          135deg,
+          var(--color-mleague-dark),
+          var(--color-mleague-light)
+        );
+      }
+      .code {
+        padding: 4px 8px;
+        margin-top: 4px;
+        font-family: monospace, serif;
+        font-size: 0.85rem;
+      }
+      footer {
+        margin-top: var(--space-section);
+        padding: 16px 0;
+        border-top: 2px solid #ddd;
+        font-size: 0.8rem;
+        color: var(--color-secondary);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>
+        M.LEAGUE Calendar
+        <p class="lead">Mリーグ カレンダー</p>
+      </h1>
+      <section>
+        <h2>各チームのカレンダー</h2>
+        <p>チーム毎のスケジュール（Google Calendar）です。</p>
+        <p>推しチームを選んで登録することができます。</p>
+        <p>ボタンの下の文字列はおすすめのカラーコードです。</p>
+        <p>
+          カレンダーの色の変更方法は<a
+            class="link"
+            href="https://support.google.com/a/users/answer/9282728?hl=ja#6.3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            👉 こちら</a
+          >。
+        </p>
+        <ul class="team-list">
+          <li class="team-item drivens">
+            <a
+              class="button"
+              href="https://calendar.google.com/calendar/u/0?cid=MzJmZGI1Y2Q1YWU4MzExNjA5NDI4NDA4MDlhMThjOGVmN2UwYjFmNmQ3MjU2YzVhZGRmOTIyYzMwNGJiYjE5ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span>赤坂ドリブンズ</span></a
+            >
+            <span class="code">#9cb832</span>
+          </li>
+          <li class="team-item furinkazan">
+            <a
+              class="button"
+              href="https://calendar.google.com/calendar/u/0?cid=YmJjM2QwYzM4MjY1N2FmYWM1ZjJlMzNjZjExNzdlNGMwZDI4M2RiM2FiOGQ2NTJlYTlhZTQyZmMzZmQ3NmQ3Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span>EX風林火山</span></a
+            >
+            <span class="code">#000000</span>
+          </li>
+          <li class="team-item sakuraknights">
+            <a
+              class="button"
+              href="https://calendar.google.com/calendar/u/0?cid=YmZmYmVhMTFlM2NkNzhlODc5MTdkOTMyMDNiMjRhNzkzMjM5ODg0NjZhMGY4MTQwZjU1OWNhMzJmZjk2NDIzNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span>KADOKAWAサクラナイツ</span></a
+            >
+            <span class="code">#f895b5</span>
+          </li>
+          <li class="team-item fightclub">
+            <a
+              class="button"
+              href="https://calendar.google.com/calendar/u/0?cid=N2RhNGY0MjA2ZDQwYjU1ZmI2ZDE4OTE5ZTljZmEwOWQ4MjMxZjg1NGY3N2I0NjAyODE1M2ZkZDUxNThiYWRmM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span>KONAMI麻雀格闘倶楽部</span></a
+            >
+            <span class="code">#920101</span>
+          </li>
+          <li class="team-item abemas">
+            <a
+              class="button"
+              href="https://calendar.google.com/calendar/u/0?cid=ZWUxNGFiM2IyY2RlNWQ5NjVmYTNmMGIwNjA4YTliODM0M2E3OTRmMjljMWUyYTEwMGVhY2ZhY2VhYmY2ZTg1Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span>渋谷ABEMAS</span></a
+            >
+            <span class="code">#c6ae6f</span>
+          </li>
+          <li class="team-item phoenix">
+            <a
+              class="button"
+              href="https://calendar.google.com/calendar/u/0?cid=MTRjMzkwODY5MWZhYjUxNTJhOTAyNmY5MjcwMDA4YzIxM2Q4MzBmN2YyYTA3MjdlM2RlYTQ2N2I0MGE4NzgyNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span>セガサミーフェニックス</span></a
+            >
+            <span class="code">#b74801</span>
+          </li>
+          <li class="team-item raiden">
+            <a
+              class="button"
+              href="https://calendar.google.com/calendar/u/0?cid=ZDVkODkzZWNjODA4Mjk5MjE2MTdiMjM4ZWRmMTEyOTk0MDEyMGJhNzU4NDYwZDBhZGIwMjM1MmYwMjAxMzU0MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span>TEAM RAIDEN / 雷電</span></a
+            >
+            <span class="code">#dbb400</span>
+          </li>
+          <li class="team-item pirates">
+            <a
+              class="button"
+              href="https://calendar.google.com/calendar/u/0?cid=NGZmMmFhYWZhNGU4NzJhNDc0ZDdkYzBmNGM1NDE3ZTkzYjEyZmJmMDM5ZDQwOGEwZjJjNmIwYWY3OTRlNjdkMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span>U-NEXT Pirates</span></a
+            >
+            <span class="code">#0582c8</span>
+          </li>
+          <li class="team-item all-team">
+            <a
+              class="button"
+              href="https://calendar.google.com/calendar/u/0?cid=NDVkZmNiZWVhMjY0NWUyZTQzMTEwMDc0YTM5Y2UwMGZmMGY5MjU4Mjg4YWJmOGRhZWFhZWM4NGY1MWIyZThjOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span>全チーム（全日程）</span></a
+            >
+            <span class="code">#118737</span>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>プレビュー</h2>
+        <p>全部登録するとこんな感じになります。</p>
+        <iframe
+          src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FTokyo&showTitle=1&showTz=0&showCalendars=1&showNav=1&showDate=1&showPrint=0&showTabs=1&hl=ja&title=M%E3%83%AA%E3%83%BC%E3%82%B0%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC&mode=MONTH&src=NDVkZmNiZWVhMjY0NWUyZTQzMTEwMDc0YTM5Y2UwMGZmMGY5MjU4Mjg4YWJmOGRhZWFhZWM4NGY1MWIyZThjOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YmJjM2QwYzM4MjY1N2FmYWM1ZjJlMzNjZjExNzdlNGMwZDI4M2RiM2FiOGQ2NTJlYTlhZTQyZmMzZmQ3NmQ3Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YmZmYmVhMTFlM2NkNzhlODc5MTdkOTMyMDNiMjRhNzkzMjM5ODg0NjZhMGY4MTQwZjU1OWNhMzJmZjk2NDIzNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=N2RhNGY0MjA2ZDQwYjU1ZmI2ZDE4OTE5ZTljZmEwOWQ4MjMxZjg1NGY3N2I0NjAyODE1M2ZkZDUxNThiYWRmM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZDVkODkzZWNjODA4Mjk5MjE2MTdiMjM4ZWRmMTEyOTk0MDEyMGJhNzU4NDYwZDBhZGIwMjM1MmYwMjAxMzU0MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NGZmMmFhYWZhNGU4NzJhNDc0ZDdkYzBmNGM1NDE3ZTkzYjEyZmJmMDM5ZDQwOGEwZjJjNmIwYWY3OTRlNjdkMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MTRjMzkwODY5MWZhYjUxNTJhOTAyNmY5MjcwMDA4YzIxM2Q4MzBmN2YyYTA3MjdlM2RlYTQ2N2I0MGE4NzgyNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZWUxNGFiM2IyY2RlNWQ5NjVmYTNmMGIwNjA4YTliODM0M2E3OTRmMjljMWUyYTEwMGVhY2ZhY2VhYmY2ZTg1Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MzJmZGI1Y2Q1YWU4MzExNjA5NDI4NDA4MDlhMThjOGVmN2UwYjFmNmQ3MjU2YzVhZGRmOTIyYzMwNGJiYjE5ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233F51B5&color=%23000000&color=%23c65f81&color=%23920101&color=%23af9000&color=%230582c8&color=%23b74801&color=%23c6ae6f&color=%239cb832"
+          style="
+            border-width: 0;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 32px;
+          "
+          width="800"
+          height="600"
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+      </section>
+    </main>
+    <footer>
+      <p>🙏 非公式なものです。自己責任でご利用ください。</p>
+      <a href="https://github.com/yaeda/m-league-calendar-portal/issues"
+        >👉 Report Issuses</a
+      >
+    </footer>
+  </body>
+</html>
