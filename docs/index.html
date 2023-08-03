@@ -59,6 +59,9 @@
         --color-raiden: #dbb400;
         --color-raiden-dark: #ba6c00;
         --color-raiden-light: #cdc306;
+        --color-beast: #002953;
+        --color-beast-dark: #012549;
+        --color-beast-light: #004d9b;
         --color-pirates: #0582c8;
         --color-pirates-dark: #0a377b;
         --color-pirates-light: #47bfd1;
@@ -242,6 +245,16 @@
           var(--color-raiden-light)
         );
       }
+      .beast {
+        color: var(--color-beast);
+      }
+      .beast .button:before {
+        background: linear-gradient(
+          135deg,
+          var(--color-beast-dark),
+          var(--color-beast-light)
+        );
+      }
       .pirates {
         color: var(--color-pirates);
       }
@@ -370,6 +383,16 @@
             >
             <span class="code">#dbb400</span>
           </li>
+          <li class="team-item beast">
+            <a
+              class="button"
+              href="https://calendar.google.com/calendar/u/0/r?cid=ZTA4NjhiYWFiM2NkMTViZGJhZTU5ZjliZDU4YmQ5NjkwYmU4YmI0MjAyZjBlNzI0NjI3NjQ5NGUwNmZlMDU1MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span>BEAST Japanext</span></a
+            >
+            <span class="code">#002953</span>
+          </li>
           <li class="team-item pirates">
             <a
               class="button"
@@ -396,7 +419,7 @@
         <h2>プレビュー</h2>
         <p>全部登録するとこんな感じになります。</p>
         <iframe
-          src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FTokyo&showTitle=1&showTz=0&showCalendars=1&showNav=1&showDate=1&showPrint=0&showTabs=1&hl=ja&title=M%E3%83%AA%E3%83%BC%E3%82%B0%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC&mode=MONTH&src=NDVkZmNiZWVhMjY0NWUyZTQzMTEwMDc0YTM5Y2UwMGZmMGY5MjU4Mjg4YWJmOGRhZWFhZWM4NGY1MWIyZThjOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YmJjM2QwYzM4MjY1N2FmYWM1ZjJlMzNjZjExNzdlNGMwZDI4M2RiM2FiOGQ2NTJlYTlhZTQyZmMzZmQ3NmQ3Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YmZmYmVhMTFlM2NkNzhlODc5MTdkOTMyMDNiMjRhNzkzMjM5ODg0NjZhMGY4MTQwZjU1OWNhMzJmZjk2NDIzNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=N2RhNGY0MjA2ZDQwYjU1ZmI2ZDE4OTE5ZTljZmEwOWQ4MjMxZjg1NGY3N2I0NjAyODE1M2ZkZDUxNThiYWRmM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZDVkODkzZWNjODA4Mjk5MjE2MTdiMjM4ZWRmMTEyOTk0MDEyMGJhNzU4NDYwZDBhZGIwMjM1MmYwMjAxMzU0MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NGZmMmFhYWZhNGU4NzJhNDc0ZDdkYzBmNGM1NDE3ZTkzYjEyZmJmMDM5ZDQwOGEwZjJjNmIwYWY3OTRlNjdkMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MTRjMzkwODY5MWZhYjUxNTJhOTAyNmY5MjcwMDA4YzIxM2Q4MzBmN2YyYTA3MjdlM2RlYTQ2N2I0MGE4NzgyNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZWUxNGFiM2IyY2RlNWQ5NjVmYTNmMGIwNjA4YTliODM0M2E3OTRmMjljMWUyYTEwMGVhY2ZhY2VhYmY2ZTg1Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MzJmZGI1Y2Q1YWU4MzExNjA5NDI4NDA4MDlhMThjOGVmN2UwYjFmNmQ3MjU2YzVhZGRmOTIyYzMwNGJiYjE5ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233F51B5&color=%23000000&color=%23c65f81&color=%23920101&color=%23af9000&color=%230582c8&color=%23b74801&color=%23c6ae6f&color=%239cb832"
+          src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FTokyo&showPrint=0&hl=ja&showTitle=1&title=M%E3%83%AA%E3%83%BC%E3%82%B0%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC&showTabs=1&showNav=1&showDate=1&showTz=0&src=NDVkZmNiZWVhMjY0NWUyZTQzMTEwMDc0YTM5Y2UwMGZmMGY5MjU4Mjg4YWJmOGRhZWFhZWM4NGY1MWIyZThjOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZTA4NjhiYWFiM2NkMTViZGJhZTU5ZjliZDU4YmQ5NjkwYmU4YmI0MjAyZjBlNzI0NjI3NjQ5NGUwNmZlMDU1MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YmJjM2QwYzM4MjY1N2FmYWM1ZjJlMzNjZjExNzdlNGMwZDI4M2RiM2FiOGQ2NTJlYTlhZTQyZmMzZmQ3NmQ3Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YmZmYmVhMTFlM2NkNzhlODc5MTdkOTMyMDNiMjRhNzkzMjM5ODg0NjZhMGY4MTQwZjU1OWNhMzJmZjk2NDIzNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=N2RhNGY0MjA2ZDQwYjU1ZmI2ZDE4OTE5ZTljZmEwOWQ4MjMxZjg1NGY3N2I0NjAyODE1M2ZkZDUxNThiYWRmM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZDVkODkzZWNjODA4Mjk5MjE2MTdiMjM4ZWRmMTEyOTk0MDEyMGJhNzU4NDYwZDBhZGIwMjM1MmYwMjAxMzU0MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NGZmMmFhYWZhNGU4NzJhNDc0ZDdkYzBmNGM1NDE3ZTkzYjEyZmJmMDM5ZDQwOGEwZjJjNmIwYWY3OTRlNjdkMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MTRjMzkwODY5MWZhYjUxNTJhOTAyNmY5MjcwMDA4YzIxM2Q4MzBmN2YyYTA3MjdlM2RlYTQ2N2I0MGE4NzgyNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZWUxNGFiM2IyY2RlNWQ5NjVmYTNmMGIwNjA4YTliODM0M2E3OTRmMjljMWUyYTEwMGVhY2ZhY2VhYmY2ZTg1Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MzJmZGI1Y2Q1YWU4MzExNjA5NDI4NDA4MDlhMThjOGVmN2UwYjFmNmQ3MjU2YzVhZGRmOTIyYzMwNGJiYjE5ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233F51B5&color=%23F6BF26&color=%23000000&color=%23c65f81&color=%23920101&color=%23af9000&color=%230582c8&color=%23b74801&color=%23c6ae6f&color=%239cb832"
           style="
             border-width: 0;
             width: 100%;
@@ -406,8 +429,8 @@
           width="800"
           height="600"
           frameborder="0"
-          scrolling="no"
-        ></iframe>
+          scrolling="no">
+        </iframe>
       </section>
     </main>
     <footer>
