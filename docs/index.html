@@ -160,7 +160,10 @@
         }
       }
       .button > span {
-        display: block;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         height: 100%;
         padding: 8px;
@@ -170,12 +173,23 @@
         background-color: white;
         transition: none 0.2s ease-out 0s;
         transition-property: background-color, color;
+        overflow: hidden;
       }
       .button:hover > span {
         background-color: transparent;
         color: white;
       }
+      .button > span::before {
+        content: var(--icon);
+        position: absolute;
+        font-size: 1.2em;
+        left: 12px;
+        text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff,
+          1px -1px 0 #fff, 0px 1px 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff,
+          1px 0 0 #fff;
+      }
       .drivens {
+        --icon: "🦏";
         color: var(--color-drivens);
       }
       .drivens .button:before {
@@ -186,6 +200,7 @@
         );
       }
       .furinkazan {
+        --icon: "🌋";
         color: var(--color-furinkazan);
       }
       .furinkazan .button:before {
@@ -196,6 +211,7 @@
         );
       }
       .sakuraknights {
+        --icon: "🌸";
         color: var(--color-sakuraknights);
       }
       .sakuraknights .button:before {
@@ -206,6 +222,7 @@
         );
       }
       .fightclub {
+        --icon: "🐲";
         color: var(--color-fightclub);
       }
       .fightclub .button:before {
@@ -216,6 +233,7 @@
         );
       }
       .abemas {
+        --icon: "👆";
         color: var(--color-abemas);
       }
       .abemas .button:before {
@@ -226,6 +244,7 @@
         );
       }
       .phoenix {
+        --icon: "🐦‍🔥";
         color: var(--color-phoenix);
       }
       .phoenix .button:before {
@@ -236,6 +255,7 @@
         );
       }
       .raiden {
+        --icon: "⚡";
         color: var(--color-raiden);
       }
       .raiden .button:before {
@@ -246,6 +266,7 @@
         );
       }
       .beast {
+        --icon: "🐺";
         color: var(--color-beast);
       }
       .beast .button:before {
@@ -256,6 +277,7 @@
         );
       }
       .pirates {
+        --icon: "🏴‍☠️";
         color: var(--color-pirates);
       }
       .pirates .button:before {
@@ -266,6 +288,7 @@
         );
       }
       .all-team {
+        --icon: "🀄";
         color: var(--color-mleague);
       }
       .all-team .button:before {
