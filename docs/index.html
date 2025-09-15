@@ -38,6 +38,9 @@
         --color-mleague: #118737;
         --color-mleague-dark: #085c23;
         --color-mleague-light: #0fb142;
+        --color-jets: #006934;
+        --color-jets-dark: #006934;
+        --color-jets-light: #e60012;
         --color-drivens: #9cb832;
         --color-drivens-dark: #1d6237;
         --color-drivens-light: #dee54f;
@@ -193,6 +196,28 @@
           1px -1px 0 #fff, 0px 1px 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff,
           1px 0 0 #fff;
       }
+      .code {
+        padding: 4px 8px;
+        margin-top: 4px;
+        font-family: monospace, serif;
+        font-size: 0.85rem;
+      }
+      footer {
+        margin-top: var(--space-section);
+        padding: 16px 0;
+        border-top: 2px solid #ddd;
+        font-size: 0.8rem;
+        color: var(--color-secondary);
+        text-align: center;
+      }
+
+      /* Team specific styles */
+      .jets {
+        --icon: "🛡️";
+        --color-light: var(--color-jets-light);
+        --color-dark: var(--color-jets-dark);
+        color: var(--color-jets);
+      }
       .drivens {
         --icon: "🦏";
         --color-light: var(--color-drivens-light);
@@ -253,20 +278,6 @@
         --color-dark: var(--color-mleague-dark);
         color: var(--color-mleague);
       }
-      .code {
-        padding: 4px 8px;
-        margin-top: 4px;
-        font-family: monospace, serif;
-        font-size: 0.85rem;
-      }
-      footer {
-        margin-top: var(--space-section);
-        padding: 16px 0;
-        border-top: 2px solid #ddd;
-        font-size: 0.8rem;
-        color: var(--color-secondary);
-        text-align: center;
-      }
     </style>
   </head>
   <body>
@@ -291,6 +302,16 @@
           >。
         </p>
         <ul class="team-list">
+          <li class="team-item jets">
+            <a
+              class="button"
+              href="https://calendar.google.com/calendar/u/0/r?cid=OGQ0YzBmOGExNzRmZjBhNjE3MWQ5ZTI5YWQwYWRjODZjOWViMTljNmM1MGY2NjkwMmYyMTJiNDg0NWYxOGJkM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span>EARTH JETS</span></a
+            >
+            <span class="code">#006934</span>
+          </li>
           <li class="team-item drivens">
             <a
               class="button"
@@ -397,7 +418,7 @@
         <h2>プレビュー</h2>
         <p>全部登録するとこんな感じになります。</p>
         <iframe
-          src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FTokyo&showPrint=0&hl=ja&showTitle=1&title=M%E3%83%AA%E3%83%BC%E3%82%B0%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC&showTabs=1&showNav=1&showDate=1&showTz=0&src=NDVkZmNiZWVhMjY0NWUyZTQzMTEwMDc0YTM5Y2UwMGZmMGY5MjU4Mjg4YWJmOGRhZWFhZWM4NGY1MWIyZThjOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZTA4NjhiYWFiM2NkMTViZGJhZTU5ZjliZDU4YmQ5NjkwYmU4YmI0MjAyZjBlNzI0NjI3NjQ5NGUwNmZlMDU1MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YmJjM2QwYzM4MjY1N2FmYWM1ZjJlMzNjZjExNzdlNGMwZDI4M2RiM2FiOGQ2NTJlYTlhZTQyZmMzZmQ3NmQ3Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YmZmYmVhMTFlM2NkNzhlODc5MTdkOTMyMDNiMjRhNzkzMjM5ODg0NjZhMGY4MTQwZjU1OWNhMzJmZjk2NDIzNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=N2RhNGY0MjA2ZDQwYjU1ZmI2ZDE4OTE5ZTljZmEwOWQ4MjMxZjg1NGY3N2I0NjAyODE1M2ZkZDUxNThiYWRmM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZDVkODkzZWNjODA4Mjk5MjE2MTdiMjM4ZWRmMTEyOTk0MDEyMGJhNzU4NDYwZDBhZGIwMjM1MmYwMjAxMzU0MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NGZmMmFhYWZhNGU4NzJhNDc0ZDdkYzBmNGM1NDE3ZTkzYjEyZmJmMDM5ZDQwOGEwZjJjNmIwYWY3OTRlNjdkMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MTRjMzkwODY5MWZhYjUxNTJhOTAyNmY5MjcwMDA4YzIxM2Q4MzBmN2YyYTA3MjdlM2RlYTQ2N2I0MGE4NzgyNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZWUxNGFiM2IyY2RlNWQ5NjVmYTNmMGIwNjA4YTliODM0M2E3OTRmMjljMWUyYTEwMGVhY2ZhY2VhYmY2ZTg1Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MzJmZGI1Y2Q1YWU4MzExNjA5NDI4NDA4MDlhMThjOGVmN2UwYjFmNmQ3MjU2YzVhZGRmOTIyYzMwNGJiYjE5ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233F51B5&color=%23F6BF26&color=%23000000&color=%23c65f81&color=%23920101&color=%23af9000&color=%230582c8&color=%23b74801&color=%23c6ae6f&color=%239cb832"
+          src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&title=M%E3%83%AA%E3%83%BC%E3%82%B0%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC&showTz=0&hl=ja&src=NDVkZmNiZWVhMjY0NWUyZTQzMTEwMDc0YTM5Y2UwMGZmMGY5MjU4Mjg4YWJmOGRhZWFhZWM4NGY1MWIyZThjOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZTA4NjhiYWFiM2NkMTViZGJhZTU5ZjliZDU4YmQ5NjkwYmU4YmI0MjAyZjBlNzI0NjI3NjQ5NGUwNmZlMDU1MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YmJjM2QwYzM4MjY1N2FmYWM1ZjJlMzNjZjExNzdlNGMwZDI4M2RiM2FiOGQ2NTJlYTlhZTQyZmMzZmQ3NmQ3Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YmZmYmVhMTFlM2NkNzhlODc5MTdkOTMyMDNiMjRhNzkzMjM5ODg0NjZhMGY4MTQwZjU1OWNhMzJmZjk2NDIzNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=N2RhNGY0MjA2ZDQwYjU1ZmI2ZDE4OTE5ZTljZmEwOWQ4MjMxZjg1NGY3N2I0NjAyODE1M2ZkZDUxNThiYWRmM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZDVkODkzZWNjODA4Mjk5MjE2MTdiMjM4ZWRmMTEyOTk0MDEyMGJhNzU4NDYwZDBhZGIwMjM1MmYwMjAxMzU0MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NGZmMmFhYWZhNGU4NzJhNDc0ZDdkYzBmNGM1NDE3ZTkzYjEyZmJmMDM5ZDQwOGEwZjJjNmIwYWY3OTRlNjdkMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MTRjMzkwODY5MWZhYjUxNTJhOTAyNmY5MjcwMDA4YzIxM2Q4MzBmN2YyYTA3MjdlM2RlYTQ2N2I0MGE4NzgyNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZWUxNGFiM2IyY2RlNWQ5NjVmYTNmMGIwNjA4YTliODM0M2E3OTRmMjljMWUyYTEwMGVhY2ZhY2VhYmY2ZTg1Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MzJmZGI1Y2Q1YWU4MzExNjA5NDI4NDA4MDlhMThjOGVmN2UwYjFmNmQ3MjU2YzVhZGRmOTIyYzMwNGJiYjE5ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=OGQ0YzBmOGExNzRmZjBhNjE3MWQ5ZTI5YWQwYWRjODZjOWViMTljNmM1MGY2NjkwMmYyMTJiNDg0NWYxOGJkM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233f51b5&color=%23f6bf26&color=%23000000&color=%23f895b5&color=%23920101&color=%23dbb400&color=%230582c8&color=%23b74801&color=%23c6ae6f&color=%239cb832&color=%237986cb"
           style="
             border-width: 0;
             width: 100%;
@@ -408,8 +429,7 @@
           height="600"
           frameborder="0"
           scrolling="no"
-        >
-        </iframe>
+        ></iframe>
       </section>
     </main>
     <footer>
